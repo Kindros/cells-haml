@@ -8,11 +8,10 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'cells-haml'
-gem "haml", github: "haml/haml", ref: "7c7c169"
+gem "haml", "~> 6.0"
 ```
 
-This gem currently only works properly with Haml 4.1, which is not yet released.
-
+This gem currently works with Haml 6.x.
 
 ## HTML Escaping
 
@@ -34,3 +33,4 @@ If that doesn't work, [read the docs](http://trailblazerb.org/gems/cells/cells4.
 ## Dependencies
 
 This gem works with Tilt 1.4 and 2.0, and hence allows you to use it from Rails 3.2 upwards.
+

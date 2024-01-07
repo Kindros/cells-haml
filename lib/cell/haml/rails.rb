@@ -15,6 +15,20 @@ module Cell
       def form_tag_with_body(html_options, content)
         "#{form_tag_html(html_options)}" << content.to_s << "</form>"
       end
+
+      # with Haml 6.x, we don't need magical output buffers since yielding a block returns the
+      # content.
+      def with_output_buffer(block_buffer=ViewModel::OutputBuffer.new)
+        yield
+      end
+
+      def capture(*args)
+        yield(*args)
+      end
+
+      def content_tag(name, content_or_options_with_block=nil, options=nil, escape=false, &block)
+        super
+      end
     end
   end
 end
